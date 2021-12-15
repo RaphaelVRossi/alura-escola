@@ -14,12 +14,16 @@ public class Email {
 
     private String endereco;
 
-    public Email(String endereco) throws IllegalAccessException {
+    public Email(String endereco) {
         if (endereco == null ||
                 !endereco.matches(EMAIL_REGEX)) {
-            throw new IllegalAccessException("E-mail invalido");
+            throw new IllegalArgumentException("E-mail invalido");
         }
 
         this.endereco = endereco;
+    }
+
+    public String getEndereco() {
+        return endereco;
     }
 }
